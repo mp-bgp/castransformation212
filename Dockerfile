@@ -2,6 +2,8 @@ FROM tomcat:9
 
 COPY target/pcws.war /usr/local/tomcat/webapps/ROOT.war
 
+RUN mkdir -p /export || true
+
 ENV SPRING_PROFILES_ACTIVE=mock
 ENV PCWS_DATALOG_DIRECTORY="/export"
 ENV PCWS_ACCOUNT_SERVICE_URL="https://bfh-paketblitz-account-service.herokuapp.com"
